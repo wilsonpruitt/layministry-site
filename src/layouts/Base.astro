@@ -1,0 +1,38 @@
+---
+interface Props {
+  title: string;
+  description: string;
+}
+const { title, description } = Astro.props;
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="stylesheet" href="/styles/site.css" />
+    <script defer src="/_vercel/insights/script.js"></script>
+  </head>
+  <body>
+    <div class="topnav">
+      <div class="wrap">
+        <a class="brand" href="/"><img src="/wordmark.svg" alt="Wroot Labs" /></a>
+        <nav>
+          <a href="/course">The course</a>
+          <a href="mailto:wilson.pruitt@gmail.com" class="cta">Get in touch</a>
+        </nav>
+      </div>
+    </div>
+    <main class="wrap">
+      <slot />
+    </main>
+    <footer>
+      <div class="wrap">
+        <p>Lay Servant Ministries reactivation — a Wroot Labs / Covenant UMC Austin project. Not an official General Board of Discipleship resource.</p>
+      </div>
+    </footer>
+  </body>
+</html>

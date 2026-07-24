@@ -1,0 +1,161 @@
+@import "./tokens.css";
+
+* { box-sizing: border-box; }
+body { margin: 0; }
+img { max-width: 100%; display: block; }
+
+.wrap {
+  max-width: 840px;
+  margin: 0 auto;
+  padding: 0 var(--space-5);
+}
+
+/* ---------- Nav ---------- */
+.topnav {
+  border-bottom: 1px solid var(--border);
+  background: var(--parchment);
+}
+.topnav .wrap {
+  max-width: 960px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-5);
+  padding-top: var(--space-4);
+  padding-bottom: var(--space-4);
+}
+.topnav .brand img { height: 22px; }
+.topnav nav {
+  display: flex;
+  align-items: center;
+  gap: var(--space-6);
+}
+.topnav nav a {
+  font-family: var(--sans);
+  font-size: var(--t-body-sm);
+  font-weight: var(--w-medium);
+  color: var(--fg-muted);
+  text-decoration: none;
+}
+.topnav nav a:hover { color: var(--fen); }
+.topnav .cta {
+  border-radius: var(--radius-md);
+  background: var(--fen);
+  color: var(--fg-on-fen) !important;
+  padding: 8px 16px;
+}
+.topnav .cta:hover { background: var(--fen-mist); }
+
+/* ---------- Hero ---------- */
+.hero { padding: var(--space-9) 0 var(--space-8); }
+.hero .status-tag {
+  display: inline-block;
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius-pill);
+  padding: 4px 12px;
+  margin-bottom: var(--space-5);
+}
+.hero h1 {
+  font-family: var(--serif);
+  font-weight: var(--w-medium);
+  color: var(--fen);
+  font-size: clamp(2.2rem, 5vw, var(--t-display-lg));
+  line-height: var(--lh-display);
+  letter-spacing: 0.2px;
+  margin: 0;
+}
+.hero .lede {
+  font-family: var(--serif);
+  font-style: italic;
+  color: var(--fen-mist);
+  font-size: 20px;
+  max-width: 40rem;
+  margin-top: var(--space-4);
+}
+.hero .actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-4);
+  margin-top: var(--space-6);
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  border-radius: var(--radius-md);
+  padding: 10px 20px;
+  font-family: var(--sans);
+  font-size: var(--t-body-sm);
+  font-weight: var(--w-medium);
+  text-decoration: none;
+}
+.btn-primary { background: var(--fen); color: var(--fg-on-fen); }
+.btn-primary:hover { background: var(--fen-mist); color: var(--fg-on-fen); }
+.btn-secondary { border: 1px solid var(--border-strong); background: var(--ivory); color: var(--fen); }
+.btn-secondary:hover { border-color: var(--fen-mist); }
+
+/* ---------- Section ---------- */
+section.block { padding: var(--space-8) 0; border-top: 1px solid var(--border); }
+section.block:first-of-type { border-top: none; }
+.block h2 { font-size: var(--t-display-sm); font-family: var(--serif); font-weight: var(--w-medium); color: var(--fen); }
+.block .lede { font-family: var(--serif); font-style: italic; color: var(--fen-mist); font-size: 18px; margin-top: var(--space-2); }
+.block .prose { margin-top: var(--space-5); font-size: 17px; }
+.block .prose p + p { margin-top: 1em; }
+
+/* ---------- Card grid (the three-rung ladder) ---------- */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: var(--space-5);
+  margin-top: var(--space-6);
+}
+.rung-card {
+  background: var(--ivory);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-5);
+}
+.rung-card .eyebrow { display: block; margin-bottom: var(--space-2); }
+.rung-card h3 { font-family: var(--serif); font-weight: var(--w-medium); font-size: 21px; color: var(--fen); }
+.rung-card p { margin-top: var(--space-3); font-size: 15px; color: var(--fg-muted); line-height: var(--lh-prose); }
+
+/* ---------- Session list ---------- */
+.session-list { list-style: none; margin: var(--space-6) 0 0; padding: 0; }
+.session-item {
+  display: grid;
+  grid-template-columns: 3rem 1fr;
+  gap: var(--space-4);
+  padding: var(--space-5) 0;
+  border-top: 1px solid var(--border);
+}
+.session-item:first-child { border-top: none; }
+.session-n { font-family: var(--serif); font-feature-settings: "onum" 1; color: var(--reed-deep); font-size: 15px; padding-top: 3px; }
+.session-item h3 { font-family: var(--serif); font-weight: var(--w-medium); font-size: 20px; color: var(--fen); }
+.session-meta { font-size: var(--t-caption); color: var(--fg-quiet); margin-top: 2px; }
+.session-item p { margin-top: var(--space-2); font-size: 15px; color: var(--fg-muted); }
+
+/* ---------- Editorial card (the "why now" pull quote / economics note) ---------- */
+.editorial-card {
+  border-left: 3px solid var(--reed);
+  background: var(--ivory);
+  border-radius: var(--radius-md);
+  padding: var(--space-5) var(--space-6);
+  margin-top: var(--space-6);
+}
+.editorial-card p { font-size: 16px; }
+
+/* ---------- Status panel ---------- */
+.status-panel {
+  background: var(--bg-sunken);
+  border-radius: var(--radius-lg);
+  padding: var(--space-6);
+  margin-top: var(--space-6);
+}
+.status-panel dl { display: grid; grid-template-columns: auto 1fr; gap: var(--space-2) var(--space-5); margin: 0; }
+.status-panel dt { font-family: var(--sans); font-size: var(--t-body-sm); font-weight: var(--w-semibold); color: var(--fen); white-space: nowrap; }
+.status-panel dd { margin: 0; font-size: var(--t-body-sm); color: var(--fg-muted); }
+
+/* ---------- Footer ---------- */
+footer { border-top: 1px solid var(--border); padding: var(--space-7) 0; }
+footer p { font-size: var(--t-caption); color: var(--fg-quiet); }
+footer a { color: var(--fg-quiet); }

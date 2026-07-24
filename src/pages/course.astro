@@ -1,0 +1,114 @@
+---
+import Base from '../layouts/Base.astro';
+
+const sessions = [
+  {
+    n: 1,
+    title: 'Ministry of the Baptized',
+    meta: 'In person · Saturday morning · 3.0 hrs',
+    body: 'Welcome and covenant, then the priesthood of all believers — hearing and discerning God’s call, spiritual gifts, and the place of laity in early Methodism.',
+  },
+  {
+    n: 2,
+    title: 'Leading',
+    meta: 'Zoom · weeknight · 1.5 hrs',
+    body: 'Servant leadership, spiritual leadership, Christian conferencing, and how a group reaches consensus and discernment together.',
+  },
+  {
+    n: 3,
+    title: 'Caring',
+    meta: 'Zoom · weeknight · 1.5 hrs',
+    body: 'The biblical basis for caring ministry, acts of compassion versus acts of justice, the range of caring ministries, and care for creation.',
+  },
+  {
+    n: 4,
+    title: 'Communicating',
+    meta: 'Zoom · weeknight · 1.5 hrs',
+    body: 'Respectful communication, mutual invitation, real listening, and how to tell your own faith story without a script.',
+  },
+  {
+    n: 5,
+    title: 'Into the World',
+    meta: 'In person · Saturday morning · 2.5 hrs',
+    body: 'The Great Commission, hospitality, and tools for ongoing ministry — plus a dedicated conversation on the three doors this course opens: local leadership, pulpit supply, and starting new faith communities. Closes with commissioning and next steps.',
+  },
+];
+---
+
+<Base
+  title="The Course — Lay Servant Ministries Basic Course"
+  description="Ten contact hours across five sessions, hybrid format, team-taught by pastors — the Lay Servant Ministries Basic Course reactivation plan."
+>
+  <section class="hero" style="padding-bottom: 0;">
+    <span class="status-tag eyebrow">Proposal · dates not yet set</span>
+    <h1>Ten hours. Five weeks. One cohort.</h1>
+    <p class="lede">
+      The official participant's book is built in five sessions, which map
+      cleanly onto ten contact hours. Two in-person Saturday bookends carry
+      the community; three Zoom evenings in between carry the participation.
+    </p>
+  </section>
+
+  <section class="block">
+    <span class="eyebrow">The five sessions</span>
+    <h2>Matches the official curriculum, session for session.</h2>
+    <ol class="session-list">
+      {sessions.map((s) => (
+        <li class="session-item">
+          <span class="session-n">{s.n}</span>
+          <div>
+            <h3>{s.title}</h3>
+            <p class="session-meta">{s.meta}</p>
+            <p>{s.body}</p>
+          </div>
+        </li>
+      ))}
+    </ol>
+  </section>
+
+  <section class="block">
+    <span class="eyebrow">Team teaching</span>
+    <h2>Four pastors, one cohort, no one overloaded.</h2>
+    <div class="prose">
+      <p>
+        A course dean convenes Week 1 and co-leads Week 5, and handles
+        registration and the district liaison. Three other pastors each take
+        one Zoom evening — roughly two to three hours of total commitment
+        apiece, including attendance. All four join the Week 5 closing
+        panel.
+      </p>
+      <p>
+        The team model keeps the ask to any one colleague genuinely small —
+        one evening plus a Saturday — and makes the course connectional
+        rather than congregational: each pastor recruits three to five
+        laity from their own charge, yielding a cohort of twelve to twenty
+        that models the connection the course itself teaches.
+      </p>
+    </div>
+  </section>
+
+  <section class="block">
+    <span class="eyebrow">Materials &amp; certification</span>
+    <h2>The official curriculum, unaltered.</h2>
+    <div class="prose">
+      <p>
+        This project doesn't change the required curriculum (¶266.7) — the
+        <em>Lay Servant Ministries Basic Course Participant's Book</em>
+        (Jackson &amp; Jackson, Discipleship Resources) carries the content
+        for every session. What this site and its companion materials add
+        is context: primary-source readings, a plain-English map of the
+        certification ladder, and the logistics to make a hybrid, team-taught
+        cohort easy to run.
+      </p>
+      <p>
+        Completion is reported to the district committee on Lay Servant
+        Ministries (or equivalent structure per ¶668.3) so it counts toward
+        certification as a lay servant.
+      </p>
+    </div>
+    <div class="actions">
+      <a class="btn btn-secondary" href="/">← Back to the overview</a>
+      <a class="btn btn-primary" href="mailto:wilson.pruitt@gmail.com">Ask about teaching a session</a>
+    </div>
+  </section>
+</Base>
